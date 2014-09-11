@@ -260,6 +260,7 @@ public class RabbitMQSource extends AbstractSource
             counterGroup.incrementAndGet(COUNTER_EMPTY_MQ_GET);
             return null;
         }
+        logger.info("received event: {} bytes", response.getBody().length);
         if (response.getEnvelope() != null) {
             logger.debug("Envelope: {}", response.getEnvelope());
         }
