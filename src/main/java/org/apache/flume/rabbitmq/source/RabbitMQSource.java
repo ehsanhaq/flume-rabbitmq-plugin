@@ -256,7 +256,7 @@ public class RabbitMQSource extends AbstractSource
         GetResponse response;
         response = channel.getChannel().basicGet(queueName, false);
         if (response == null) {
-            logger.info("No event to read from MQ");
+            logger.debug("No event to read from MQ");
             counterGroup.incrementAndGet(COUNTER_EMPTY_MQ_GET);
             return null;
         }
